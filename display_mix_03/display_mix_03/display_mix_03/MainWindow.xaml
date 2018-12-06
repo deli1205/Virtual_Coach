@@ -1,0 +1,61 @@
+﻿<Window x:Class="display_mix_03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:display_mix_03"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="827.5" Width="1404">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="299*"/>
+            <ColumnDefinition Width="1097*"/>
+        </Grid.ColumnDefinitions>
+        <RadioButton x:Name="radioButton" Content="RadioButton" Grid.Column="1" HorizontalAlignment="Left" Margin="275,394,0,0" VerticalAlignment="Top"/>
+        <Viewport3D x:Name="V3D_learner" HorizontalAlignment="Left" Width="1300" Height="700" VerticalAlignment="Top" Margin="0,31,0,0" Grid.ColumnSpan="2">
+            <ModelVisual3D x:Name = "MyModel_learner">
+            </ModelVisual3D>
+            <ModelVisual3D x:Name = "MyModel_learner_path">
+            </ModelVisual3D>
+        </Viewport3D>
+        <Viewport3D x:Name="V3D_coach" HorizontalAlignment="Left" Width="801" Height="651" VerticalAlignment="Top" Margin="329,55,-33,0" Grid.Column="1">
+            <ModelVisual3D x:Name = "MyModel_coach">
+            </ModelVisual3D>
+            <ModelVisual3D x:Name = "MyModel_coach_path">
+            </ModelVisual3D>
+        </Viewport3D>
+        <Menu x:Name="menu" Height="31" Margin="0,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="1386" Grid.ColumnSpan="2">
+            <MenuItem Header="建置3D空間">
+                <MenuItem Header="建立" HorizontalAlignment="Left" Width="205" Click="set_3D"/>
+            </MenuItem>
+            <MenuItem Header="軌跡">
+                <MenuItem Header="讀入示範軌跡" HorizontalAlignment="Left" Width="160" Click="load_path_demo" />
+                <MenuItem Header="讀入引導軌跡" HorizontalAlignment="Left" Width="160" Click="load_path_guild"/>
+                <MenuItem Header="讀入標準軌跡" HorizontalAlignment="Left" Width="160" Click="load_path_compare"/>
+                <MenuItem Header="簡化" HorizontalAlignment="Left" Width="160" Click="simpfy_path"/>
+                <MenuItem Header="計算差異度" HorizontalAlignment="Left" Width="160" Click="check_diff"/>
+            </MenuItem>
+            <MenuItem Header="讀入教學影片" Click="load_video"/>
+            <MenuItem Header="播放">
+                <MenuItem Header="開始全部功能" HorizontalAlignment="Left" Width="160" Click="play_all"/>
+                <MenuItem Header="僅播放軌跡" HorizontalAlignment="Left" Width="160" Click="play_path"/>
+            </MenuItem>
+            <MenuItem Header="MenuItem" Click="MenuItem_Click"/>
+        </Menu>
+        <StatusBar Height="46" Margin="0,751,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <StatusBarItem Name="SB1" Content="影片fps" Height="46" VerticalAlignment="Top" Width="100"/>
+            <StatusBarItem Name="SB2" Content="影片當前frame" Height="46" VerticalAlignment="Top" Width="100"/>
+            <StatusBarItem Name="SB3" Content="軌跡frame數" Height="46" VerticalAlignment="Top" Width="100"/>
+            <StatusBarItem Name="SB4" Content="軌跡當前frame" Height="46" VerticalAlignment="Top" Width="100"/>
+            <StatusBarItem Name="SB5" Content="時間" Height="46" VerticalAlignment="Top" Width="100"/>
+            <StatusBarItem Name="SB6" Content="分數" Height="46" VerticalAlignment="Top" Width="100"/>
+            <StatusBarItem Name="SB7" Content="計時" Height="46" VerticalAlignment="Top"  Width="100"/>
+            <StatusBarItem Name="SB8" Content="變異度" Height="46" VerticalAlignment="Top"  Width="100"/>
+        </StatusBar>
+
+
+
+
+
+    </Grid>
+</Window>
